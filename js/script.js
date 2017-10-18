@@ -27,8 +27,6 @@ function generateHTMLElements() {
     let searchInput = document.createElement('input');
     // create info message placeholder
     infoMessage = document.createElement('p');
-    // set id of info message
-    infoMessage.id = "element-error";
     // set class for search div
     searchDiv.className = 'student-search';
     // set placeholder value for search input
