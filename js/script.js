@@ -12,10 +12,13 @@ const arrStudentEmails = document.querySelectorAll(".student-details .email");
 const studentList = studentContainer.children;
 // number of all elements (students) on the page
 const numOfItems = studentList.length;
+
 // array which holds results of search function
 let listArr = [];
 // info message placeholder to display message to the user
 let infoMessage;
+// search input element
+let searchInput;
 
 // this function generates all elements needed for javascript functionality
 function generateHTMLElements() {
@@ -24,7 +27,7 @@ function generateHTMLElements() {
     // create div element for search function
     let searchDiv = document.createElement('div');
     // create search input
-    let searchInput = document.createElement('input');
+    searchInput = document.createElement('input');
     // create info message placeholder
     infoMessage = document.createElement('p');
     // set class for search div
@@ -180,19 +183,14 @@ function searchElements(searchInput) {
 }
 
 
-
-
 // generate elements
 generateHTMLElements();
 // showButtons to display first page
 showButtons(studentList);
 
-    
 
 // bind event listener to search input
-document.querySelector(".student-search input").addEventListener('keyup', function() {
-    // get search input value
-    let searchValue = document.querySelector(".student-search input").value;
+searchInput.addEventListener('keyup', function() {
     // pass search input value in upper case for better results
-    searchElements(searchValue.toUpperCase());
-})
+    searchElements(this.value.toUpperCase());
+});
