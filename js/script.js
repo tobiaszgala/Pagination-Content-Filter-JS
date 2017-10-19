@@ -1,13 +1,13 @@
 // number of elements to be displayed on the page
 const numOfElementsOnPage = 10;
 // select first div with class of page (page container)
-const pageContainer = document.querySelector(".page");
+const pageContainer = document.querySelector('.page');
 // select first ul element which contains elements to be displayed (student container)
-const studentContainer = pageContainer.querySelector(".student-list");
+const studentContainer = pageContainer.querySelector('.student-list');
 // select all h3 tags which contain student name
-const arrStudentNames = studentContainer.querySelectorAll(".student-details h3");
+const arrStudentNames = studentContainer.querySelectorAll('.student-details h3');
 // select all email addresses
-const arrStudentEmails = studentContainer.querySelectorAll(".student-details .email");
+const arrStudentEmails = studentContainer.querySelectorAll('.student-details .email');
 // select all children elements (students) on the page
 const studentList = studentContainer.children;
 // number of all elements (students) on the page
@@ -47,13 +47,13 @@ function generateHTMLElements() {
 // functions hide all children of student container
 function hideElements() {
     for (let i = 0; i < numOfItems; i++) {
-        studentList[i].style.display = "none";
+        studentList[i].style.display = 'none';
     }
 }
 
 // function deletes buttons from the page
 function deleteButtons() {
-    let checkButtons = pageContainer.querySelector(".pagination");
+    let checkButtons = pageContainer.querySelector('.pagination');
     // remove buttons if they exist
     if (checkButtons)
         pageContainer.removeChild(checkButtons);
@@ -84,7 +84,7 @@ function showElements(arrList, pageNum) {
             break;
         else
         // otherwise, set display property to block
-            arrList[i].style.display = "block";
+            arrList[i].style.display = 'block';
     }
     
 }
@@ -97,7 +97,7 @@ function showButtons(arrList) {
     // remove previous buttons if they exist
     deleteButtons();
     // set info message placeholder to empty string
-    infoMessage.textContent = "";
+    infoMessage.textContent = '';
     // call showElements function to display first page
     showElements(arrList, 1);
 
@@ -106,7 +106,7 @@ function showButtons(arrList) {
         // create ul for generated buttons
         let buttonUl = document.createElement('ul');
         // set className to pagination
-        buttonUl.className = "pagination";
+        buttonUl.className = 'pagination';
 
         // loop to create buttons based on calculated number
         for (let i = 1; i <= numberOfButtons; i++) {
@@ -117,7 +117,7 @@ function showButtons(arrList) {
             // add text content to a tag with button number
             a.textContent = i;
             // add href attribute to each tag, # + button number
-            a.href = "#" + i;
+            a.href = '#' + i;
             // append a tag to li element
             li.appendChild(a);
             // append li tag to ul tag responsible for displaying buttons
