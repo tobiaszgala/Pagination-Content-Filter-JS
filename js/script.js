@@ -1,14 +1,14 @@
 // number of elements to be displayed on the page
 const numOfElementsOnPage = 10;
-// select first ul element which contains elements to be displayed (student container)
-const studentContainer = document.querySelector(".student-list");
 // select first div with class of page (page container)
 const pageContainer = document.querySelector(".page");
+// select first ul element which contains elements to be displayed (student container)
+const studentContainer = pageContainer.querySelector(".student-list");
 // select all h3 tags which contain student name
-const arrStudentNames = document.querySelectorAll(".student-details h3");
+const arrStudentNames = studentContainer.querySelectorAll(".student-details h3");
 // select all email addresses
-const arrStudentEmails = document.querySelectorAll(".student-details .email");
-// select all elements (students) on the page
+const arrStudentEmails = studentContainer.querySelectorAll(".student-details .email");
+// select all children elements (students) on the page
 const studentList = studentContainer.children;
 // number of all elements (students) on the page
 const numOfItems = studentList.length;
@@ -23,7 +23,7 @@ let searchInput;
 // this function generates all elements needed for javascript functionality
 function generateHTMLElements() {
     // select page header
-    const searchContainer = document.querySelector('.page-header');
+    const searchContainer = pageContainer.querySelector('.page-header');
     // create div element for search function
     let searchDiv = document.createElement('div');
     // create search input
@@ -53,7 +53,7 @@ function hideElements() {
 
 // function deletes buttons from the page
 function deleteButtons() {
-    let checkButtons = document.querySelector(".pagination");
+    let checkButtons = pageContainer.querySelector(".pagination");
     // remove buttons if they exist
     if (checkButtons)
         pageContainer.removeChild(checkButtons);
@@ -128,9 +128,9 @@ function showButtons(arrList) {
         pageContainer.appendChild(buttonUl);
         
         // select buttons
-        let button = document.querySelector('.pagination');
+        let button = pageContainer.querySelector('.pagination');
         // select all generated links
-        let buttons = document.querySelectorAll('.pagination li a');
+        let buttons = pageContainer.querySelectorAll('.pagination li a');
         // add active class to the first button
         buttons[0].classList.add('active');
         
