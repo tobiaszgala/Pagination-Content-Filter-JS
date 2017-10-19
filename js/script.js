@@ -83,8 +83,8 @@ function showElements(arrList, pageNum) {
         if (i >= numberOfElements)
             break;
         else
-        // otherwise, set display property to block
-            arrList[i].style.display = 'block';
+        // otherwise, remove inline style
+            arrList[i].style.display = '';
     }
     
 }
