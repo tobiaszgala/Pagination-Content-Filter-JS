@@ -192,5 +192,5 @@ showButtons(studentList);
 // bind event listener to search input
 searchInput.addEventListener('keyup', function() {
     // pass search input value in upper case for better results
-    searchElements(this.value.toUpperCase());
+    searchElements(searchInput.value.toUpperCase());
 });
